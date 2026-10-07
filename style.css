@@ -1,0 +1,104 @@
+/* ---------- Colors: change these to restyle the whole site ---------- */
+:root {
+    --bg: #fff0f6;
+    --pink: #ff8fb8;
+    --pink-deep: #e0558b;
+    --pink-soft: #ffd6e7;
+    --text: #5a2a41;
+    --card: #ffffffcc;
+  }
+  
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  
+  /* ---------- Bow pattern background (an SVG bow tiled across the page) ---------- */
+  body {
+    font-family: "Quicksand", "Trebuchet MS", sans-serif;
+    color: var(--text);
+    line-height: 1.6;
+    background-color: var(--bg);
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140' viewBox='0 0 140 140'%3E%3Cg fill='%23ffb3d1' opacity='.55'%3E%3Cg transform='translate(35 35)'%3E%3Cpath d='M0 0C-12-18-28-16-26 0C-28 16-12 18 0 0Z'/%3E%3Cpath d='M0 0C12-18 28-16 26 0C28 16 12 18 0 0Z'/%3E%3Ccircle r='5'/%3E%3C/g%3E%3Cg transform='translate(105 105) scale(.8)'%3E%3Cpath d='M0 0C-12-18-28-16-26 0C-28 16-12 18 0 0Z'/%3E%3Cpath d='M0 0C12-18 28-16 26 0C28 16 12 18 0 0Z'/%3E%3Ccircle r='5'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  }
+  
+  a { color: var(--pink-deep); font-weight: 600; text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  
+  /* ---------- Navigation ---------- */
+  .nav {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 14px 6%;
+    background: #fff0f6ee;
+    border-bottom: 3px dotted var(--pink);
+    backdrop-filter: blur(6px);
+  }
+  .logo { font-family: "Pacifico", cursive; font-size: 1.5rem; }
+  .nav nav a { margin-left: 18px; color: var(--text); }
+  .nav nav a:hover { color: var(--pink-deep); }
+  
+  /* ---------- Layout ---------- */
+  main { max-width: 900px; margin: 0 auto; padding: 0 20px 40px; }
+  section { margin-top: 48px; scroll-margin-top: 80px; }
+  
+  h1, h2, h3 { font-family: "Pacifico", cursive; font-weight: 400; color: var(--pink-deep); }
+  h2 { font-size: 1.8rem; margin-bottom: 10px; }
+  .section-title { text-align: center; margin-bottom: 20px; }
+  
+  /* ---------- Hero ---------- */
+  .hero { text-align: center; padding: 70px 10px 30px; }
+  .hello { font-size: 1.2rem; }
+  .hero h1 { font-size: clamp(2rem, 6vw, 3.6rem); line-height: 1.2; margin: 6px 0 14px; }
+  .tagline { font-size: 1.15rem; margin-bottom: 24px; }
+  
+  .btn {
+    display: inline-block;
+    padding: 12px 28px;
+    color: #fff;
+    background: var(--pink);
+    border-radius: 999px;
+    box-shadow: 0 5px 0 var(--pink-deep);
+    transition: transform 0.15s, box-shadow 0.15s;
+  }
+  .btn:hover { transform: translateY(3px); box-shadow: 0 2px 0 var(--pink-deep); text-decoration: none; }
+  
+  /* ---------- Cards ---------- */
+  .card {
+    background: var(--card);
+    border: 3px solid var(--pink-soft);
+    border-radius: 24px;
+    padding: 26px 28px;
+    box-shadow: 0 8px 20px #ff8fb826;
+  }
+  
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 20px;
+  }
+  .project { transition: transform 0.2s; }
+  .project:hover { transform: translateY(-6px) rotate(-1deg); }
+  .project h3 { font-size: 1.3rem; margin-bottom: 6px; }
+  .project p { margin-bottom: 10px; }
+  
+  /* ---------- Skills ---------- */
+  .chips { list-style: none; display: flex; flex-wrap: wrap; gap: 10px; margin-top: 10px; }
+  .chips li {
+    padding: 6px 16px;
+    background: var(--pink-soft);
+    border-radius: 999px;
+    font-weight: 600;
+  }
+  
+  /* ---------- Contact & footer ---------- */
+  .contact { text-align: center; }
+  footer { text-align: center; padding: 24px; color: var(--pink-deep); font-weight: 600; }
+  
+  /* ---------- Small screens ---------- */
+  @media (max-width: 560px) {
+    .nav { flex-direction: column; gap: 6px; }
+    .nav nav a { margin: 0 9px; }
+  }
